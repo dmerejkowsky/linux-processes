@@ -1,0 +1,17 @@
+#!/bin/python
+import subprocess
+
+
+def run(cmd):
+    process = subprocess.run(cmd)
+    print(process.args, "exited with", process.returncode)
+
+
+def main():
+    run("true")
+    run("false")
+    run("./segfault")
+
+
+if __name__ == "__main__":
+    main()

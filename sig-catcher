@@ -3,6 +3,9 @@
 import time
 import os
 import signal
+import sys
+
+SURE_TO_QUIT = False
 
 
 def on_windows_change(*args):
@@ -10,7 +13,11 @@ def on_windows_change(*args):
 
 
 def on_sigint(*args):
+    global SURE_TO_QUIT
+    if SURE_TO_QUIT:
+        sys.exit(2)
     print("Are you sure?")
+    SURE_TO_QUIT = True
 
 
 def on_kill(*args):

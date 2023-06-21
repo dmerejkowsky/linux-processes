@@ -5,6 +5,10 @@ echo $?
 Run false
 echo $?
 
+Run ./die
+One way to suceed (exit 0)
+Two ways to fail
+
 Run ./hello
 Press `ctrl-c`
 
