@@ -6,10 +6,10 @@ import os
 
 def main():
     pid = os.getpid()
-    count = 1
+    compteur = 1
     while True:
-        print(f"my pid is {pid} - {count}")
-        count += 1
+        print(f"salut ! - mon pid est {pid} - {compteur}")
+        compteur += 1
         time.sleep(1)
 
 

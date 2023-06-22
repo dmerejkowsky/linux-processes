@@ -9,19 +9,19 @@ SURE_TO_QUIT = False
 
 
 def on_windows_change(*args):
-    print("Window changed size")
+    print("La fenettre a changé de taille")
 
 
 def on_sigint(*args):
     global SURE_TO_QUIT
     if SURE_TO_QUIT:
         sys.exit(2)
-    print("Are you sure?")
+    print("Etes vous sur ?")
     SURE_TO_QUIT = True
 
 
 def on_kill(*args):
-    print("I want to survive")
+    print("Je veux vivre!")
 
 
 signal.signal(signal.SIGWINCH, on_windows_change)
@@ -31,10 +31,10 @@ signal.signal(signal.SIGINT, on_sigint)
 
 def main():
     pid = os.getpid()
-    count = 1
+    compteur = 1
     while True:
-        print(f"my pid is {pid} - {count}")
-        count += 1
+        print(f"salut - mon pid est {pid} - {compteur}")
+        compteur += 1
         time.sleep(1)
 
 
